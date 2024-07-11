@@ -8,6 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="image-container mt-5 mx-auto  rounded-5 bg-secondary-subtle w-75 d-flex"> 
+            @dd($cocktails)
 
             <img class="w-50 " src="{{ Vite::asset('resources/img/coctails.png') }}" alt=""> 
                 

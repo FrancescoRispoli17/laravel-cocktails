@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Cocktail;
 
 class PageController extends Controller
 {
@@ -11,6 +12,8 @@ class PageController extends Controller
         return view('home');
     }
     public function cocktails(){
-        return view('cocktails');
+        $cocktails = Cocktail::all();
+        
+        return view('cocktails',compact('cocktails'));
     }
 }
