@@ -10,4 +10,7 @@ class PageController extends Controller
     public function home(){
         return view('home');
     }
+    public function cocktails(){
+        return view('cocktails');
+    }
 }

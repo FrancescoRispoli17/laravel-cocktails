@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Cocktail
+    ciao
 @endsection
 
 @section('main')
