@@ -17,5 +17,4 @@ return [
         'prezzo' => 10,
         'descrizione' => " Il Sex on the Beach venne inventato negli USA negli anni Settanta, anche se con un altro nome \"Fun on the Beach\", dato che la parola sex era ritenuta sconveniente nei locali statunitensi. Tuttavia in Europa il suo nome venne cambiato in quello attuale. ",
     ],
-]
-?>
+];
