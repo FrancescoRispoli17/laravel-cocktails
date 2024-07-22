@@ -8,6 +8,7 @@ return [
         'tasso_alcolico' => 28,
         'prezzo' => 10,
         'descrizione' => " Il Negroni è uno dei cocktail italiani più famosi al mondo: ha un gusto inconfondibile e si serve in un tumbler basso e colmo di ghiaccio. Immancabile poi una profumata fetta d’arancia ",
+        
     ],
     [
         'nome' => "sex on the beach",

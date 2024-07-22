@@ -18,6 +18,7 @@ return new class extends Migration
             $table->float('tasso_alcolico');
             $table->float('prezzo');
             $table->string('descrizione',300);
+            
 
             $table->timestamps();
         });

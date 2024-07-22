@@ -37,9 +37,11 @@ class CocktailController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cocktail $cocktail)
+    public function show(string $id)
     {
-        return view('Cocktail.show', $cocktail);
+        $cocktail = Cocktail::find($id);
+        
+        return view('cocktail.show', compact('cocktail'));
     }
 
     /**

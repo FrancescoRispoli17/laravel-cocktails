@@ -6,22 +6,27 @@
 
 @section('main')
 <div class="container">
-    <div class="row">
-        <div class="image-container mt-5 mx-auto  rounded-5 bg-secondary-subtle w-75 d-flex"> 
+    <div >
+        <button class="w-100 btn btn-secondary my-2">Torna a lista cocktails</button>
+        <div class="d-flex justify-content-between">
             
-
-            <img class="w-50 " src="{{ Vite::asset('resources/img/coctails.png') }}" alt=""> 
-                
-            <div class="w-50 " >
-                <h2>Cocktails name</h2>
-                <div class="d-flex justify-content-between"><p>tasso alcolemico</p> <p>prezzo</p></div>
-                <h4>Ingredienti</h4>
-                
-                
-                <h5 class="mt-5">Descrizione </h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam labore soluta dicta quia id vitae ea quos incidunt. Quod voluptatibus in nulla dicta vero repellat assumenda amet aspernatur error! Optio!</p>
-            </div>
+        <h1 class="text-uppercase">{{$cocktail->nome}}</h1>
+        <h1>Prezzo:{{$cocktail->prezzo}}€</h1>
+        </div>
+        <div class="w-100 px-auto"> 
+            <img src="https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,q_auto/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/recipe_photos/slide/205750/sex_on_the_beach_cocktail.jpg" alt="">
         </div> 
+        <div class="info">
+            <div class="d-flex justify-content-between">
+            <h3>Ingredienti:</h3>
+            <h3>Tasso alcolemico: {{$cocktail->tasso_alcolico}}% </h3>
+            </div>
+            <p>{{$cocktail->ingredienti}}</p>
+            <h3>Descrizione:</h3>
+            <p>{{$cocktail->descrizione}}</p>
+
+        </div>   
+        
     </div>
 </div>
 @endsection
