@@ -12,10 +12,6 @@
             <a href="{{route('cocktails.create')}}" class="btn btn-primary">Crea nuovo</a>
         </div>
             @foreach ($cocktails as $cocktail)
-<<<<<<< HEAD
-                <li><a href="{{route('cocktails.show',$cocktail)}}">{{$cocktail->nome}}</a></li>
-                <li>€{{$cocktail->prezzo}}</li>
-=======
                 {{-- <li><a href="{{route('cocktails.show',$cocktail)}}">{{$cocktail->nome}}</a></li>
                 <li>€{{$cocktail->prezzo}}</li> --}}
                 <div class="col-auto">
@@ -32,7 +28,6 @@
                         </div>
                     </div>
                 </div>
->>>>>>> 1f4bbf70cd86ce8298dba9ced9a5ccc2ea5e4620
 
             @endforeach
     </div>
