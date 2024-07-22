@@ -31,7 +31,16 @@ class CocktailController extends Controller
      */
     public function store(StoreCocktailRequest $request)
     {
-        //
+        $data=$request->validated();
+        $cocktail=new Cocktail();
+        $cocktail->nome=$data['nome'];
+        $cocktail->tasso_alcolico=$data['tasso_alcolico'];
+        $cocktail->prezzo=$data['prezzo'];
+        $cocktail->descrizione=$data['descrizione'];
+        $cocktail->ingredienti=$data['ingredienti'];
+        $cocktail->save();
+
+        return redirect()->route('cocktails.index')->with('message', 'creazione avvenuta con successo');
     }
 
     /**
@@ -47,7 +56,7 @@ class CocktailController extends Controller
      */
     public function edit(Cocktail $cocktail)
     {
-        //
+        return view('Cocktail.edit', compact('cocktail'));
     }
 
     /**
@@ -55,7 +64,7 @@ class CocktailController extends Controller
      */
     public function update(UpdateCocktailRequest $request, Cocktail $cocktail)
     {
-        //
+        
     }
 
     /**
