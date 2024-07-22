@@ -14,7 +14,8 @@ class CocktailController extends Controller
      */
     public function index()
     {
-        //
+        $cocktails=Cocktail::all();
+        return view('Cocktail.index', compact('cocktails'));
     }
 
     /**
@@ -38,7 +39,7 @@ class CocktailController extends Controller
      */
     public function show(Cocktail $cocktail)
     {
-        //
+        return view('Cocktail.show', $cocktail);
     }
 
     /**
