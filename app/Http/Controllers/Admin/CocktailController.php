@@ -66,7 +66,10 @@ class CocktailController extends Controller
      */
     public function update(UpdateCocktailRequest $request, Cocktail $cocktail)
     {
-        
+        $data = $request->all();
+        $cocktail->update($data);
+
+        return redirect()->route('cocktails.index');
     }
 
     /**
@@ -74,6 +77,7 @@ class CocktailController extends Controller
      */
     public function destroy(Cocktail $cocktail)
     {
-        //
+        $cocktail->delete();
+        return redirect()->route('cocktails.index');
     }
 }

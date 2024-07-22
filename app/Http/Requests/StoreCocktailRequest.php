@@ -27,7 +27,6 @@ class StoreCocktailRequest extends FormRequest
             'tasso_alcolico' => ['required'],
             'prezzo' => ['required'],
             'descrizione' => ['required','max:300'],
-            
         ];
     }
 }

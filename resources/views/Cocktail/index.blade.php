@@ -29,7 +29,11 @@
                           <p class="card-text">€{{$cocktail->prezzo}}</p>
                           <a href="{{route('cocktails.show',$cocktail)}}" class="btn btn-info">Info</a>
                           <a href="{{route('cocktails.edit',$cocktail)}}" class="btn btn-primary">Modifica</a>
-                          <a href="#" class="btn btn-danger">Cancella</a>
+                          <form action="{{route('cocktails.destroy',$cocktail)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Cancella</button>
+                          </form>
                         </div>
                     </div>
                 </div>
