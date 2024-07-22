@@ -7,7 +7,8 @@
 @section('main')
 <div class="container">
     <div >
-        <button class="w-100 btn btn-secondary my-2">Torna a lista cocktails</button>
+        <a href="{{route('cocktails.index')}}" class="w-100 btn btn-secondary my-2">Torna a lista cocktails</a>
+
         <div class="d-flex justify-content-between">
             
         <h1 class="text-uppercase">{{$cocktail->nome}}</h1>
