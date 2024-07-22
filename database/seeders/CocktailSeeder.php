@@ -13,18 +13,17 @@ class CocktailSeeder extends Seeder
      */
     public function run(): void
     {
-        $cocktail = new Cocktail();
+        $data=config('cocktails');
+        
+        foreach($data as $cocktail_db){
+            $cocktail=new Cocktail();
 
-        $cocktail-> nome = 'Sex on the beach';
-        $cocktail-> ingrediente_1 = 'vodka ';
-        $cocktail-> ingrediente_2 = 'liquore alla pesca';
-        $cocktail-> ingrediente_3  = 'succo di mirtillo';
-        $cocktail-> ingrediente_4 = 'Ghiaccio';
-        $cocktail-> ingrediente_5 = "Scorza d'arancia";
-        $cocktail-> tasso_alcolemico = '24';
-        $cocktail-> prezzo = 11.90;
-        $cocktail-> descrizione = "Il Sex on the beach è un cocktail leggero e fruttato di colore arancione a base di vodka, liquore alla pesca, succo di mirtilli rossi, granatina e succo d'arancia. ";
-
-        $cocktail -> save();
+            $cocktail->nome=$cocktail_db['nome'];
+            $cocktail->tasso_alcolico=$cocktail_db['tasso_alcolico'];
+            $cocktail->prezzo=$cocktail_db['prezzo'];
+            $cocktail->descrizione=$cocktail_db['descrizione'];
+            $cocktail->ingredienti=$cocktail_db['ingredienti'];
+            $cocktail -> save();
        }
+    }
 }
