@@ -32,6 +32,18 @@
                     </div>
                 @endif
             </div> -->
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Strumenti utilizzati</label>
+                <div>
+                    @foreach ($ingredients as $ingredient)
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="tec-{{ $ingredient->id }}" value="{{ $ingredient->id }}" name="ingredients[]" {{ in_array($ingredient->id, old('ingredients', [])) ? 'checked' : ' '}}>
+                        <label class="form-check-label" for="tec-{{ $ingredient->id }}">{{ $ingredient->name }}</label>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Tasso alcolico</label>
                 <input type="number" class="form-control @if ($errors->get('tasso_alcolico')) is-invalid @endif" id="exampleFormControlInput1" name="tasso_alcolico" value="{{ old('tasso_alcolico') }}">
