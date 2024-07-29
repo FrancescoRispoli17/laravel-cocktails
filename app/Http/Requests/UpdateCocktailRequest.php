@@ -24,7 +24,7 @@ class UpdateCocktailRequest extends FormRequest
     {
         return [
             'nome' => ['required', 'max:50', Rule::unique('cocktails')->ignore($this->cocktail)],
-            'ingredienti' => ['required','max:100'],
+            
             'tasso_alcolico' => ['required'],
             'prezzo' => ['required'],
             'descrizione' => ['required','max:300'],

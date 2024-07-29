@@ -21,7 +21,7 @@
                     </div>
                 @endif
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Ingredienti</label>
                 <input type="text" class="form-control @if ($errors->get('ingredienti')) is-invalid @endif" id="exampleFormControlInput1" name="ingredienti" value="{{ old('ingredienti') }}">
                 @if ($errors->get('ingredienti'))
@@ -31,7 +31,7 @@
                         @endforeach
                     </div>
                 @endif
-            </div>
+            </div> -->
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Tasso alcolico</label>
                 <input type="number" class="form-control @if ($errors->get('tasso_alcolico')) is-invalid @endif" id="exampleFormControlInput1" name="tasso_alcolico" value="{{ old('tasso_alcolico') }}">

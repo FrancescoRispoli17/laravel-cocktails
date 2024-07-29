@@ -37,7 +37,7 @@ class CocktailController extends Controller
         $cocktail->tasso_alcolico=$data['tasso_alcolico'];
         $cocktail->prezzo=$data['prezzo'];
         $cocktail->descrizione=$data['descrizione'];
-        $cocktail->ingredienti=$data['ingredienti'];
+        
         $cocktail->save();
 
         return redirect()->route('cocktails.index')->with('message', 'creazione avvenuta con successo');

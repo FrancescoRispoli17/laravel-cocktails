@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cocktails', function (Blueprint $table) {
             $table->id();
             $table->string('nome',30);
-            $table->string('ingredienti',100);
+            
             $table->float('tasso_alcolico');
             $table->float('prezzo');
             $table->string('descrizione',300);

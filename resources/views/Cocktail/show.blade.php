@@ -22,7 +22,7 @@
             <h3>Ingredienti:</h3>
             <h3>Tasso alcolemico: {{$cocktail->tasso_alcolico}}% </h3>
             </div>
-            <p>{{$cocktail->ingredienti}}</p>
+            <!-- <p>{{$cocktail->ingredienti}}</p> -->
             <h3>Descrizione:</h3>
             <p>{{$cocktail->descrizione}}</p>
 
