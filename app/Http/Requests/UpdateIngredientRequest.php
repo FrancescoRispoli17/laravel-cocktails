@@ -3,16 +3,15 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UpdateCocktailRequest extends FormRequest
+class UpdateIngredientRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -23,11 +22,7 @@ class UpdateCocktailRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome' => ['required', 'max:50', Rule::unique('cocktails')->ignore($this->cocktail)],
-            
-            'tasso_alcolico' => ['required'],
-            'prezzo' => ['required'],
-            'descrizione' => ['required','max:300'],
+            //
         ];
     }
 }

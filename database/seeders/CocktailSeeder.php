@@ -22,7 +22,7 @@ class CocktailSeeder extends Seeder
             $cocktail->tasso_alcolico=$cocktail_db['tasso_alcolico'];
             $cocktail->prezzo=$cocktail_db['prezzo'];
             $cocktail->descrizione=$cocktail_db['descrizione'];
-            $cocktail->ingredienti=$cocktail_db['ingredienti'];
+            
             $cocktail -> save();
        }
     }

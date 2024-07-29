@@ -6,6 +6,7 @@ use App\Models\Cocktail;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCocktailRequest;
 use App\Http\Requests\UpdateCocktailRequest;
+use App\Models\Ingredient;
 
 class CocktailController extends Controller
 {
@@ -14,7 +15,7 @@ class CocktailController extends Controller
      */
     public function index()
     {
-        $cocktails=Cocktail::all();
+        $cocktails = Cocktail::all();
         return view('Cocktail.index', compact('cocktails'));
     }
 
@@ -23,7 +24,9 @@ class CocktailController extends Controller
      */
     public function create()
     {
-        return view('Cocktail.create');
+        $ingredients = Ingredient::all();
+
+        return view('Cocktail.create', compact('ingredients'));
     }
 
     /**
@@ -31,15 +34,19 @@ class CocktailController extends Controller
      */
     public function store(StoreCocktailRequest $request)
     {
-        $data=$request->validated();
-        $cocktail=new Cocktail();
-        $cocktail->nome=$data['nome'];
-        $cocktail->tasso_alcolico=$data['tasso_alcolico'];
-        $cocktail->prezzo=$data['prezzo'];
-        $cocktail->descrizione=$data['descrizione'];
-        $cocktail->ingredienti=$data['ingredienti'];
-        $cocktail->save();
+        $data = $request->validated();
 
+        $cocktail = new Cocktail();
+
+        $cocktail->nome = $data['nome'];
+        $cocktail->tasso_alcolico = $data['tasso_alcolico'];
+        $cocktail->prezzo = $data['prezzo'];
+        $cocktail->descrizione = $data['descrizione'];
+
+        $cocktail->save();
+        if ($request->has('ingredients')) {
+            $cocktail->ingredients()->attach($request->ingredients);
+        }
         return redirect()->route('cocktails.index')->with('message', 'creazione avvenuta con successo');
     }
 
@@ -49,7 +56,8 @@ class CocktailController extends Controller
     public function show(string $id)
     {
         $cocktail = Cocktail::find($id);
-        
+
+
         return view('cocktail.show', compact('cocktail'));
     }
 
@@ -58,7 +66,10 @@ class CocktailController extends Controller
      */
     public function edit(Cocktail $cocktail)
     {
-        return view('Cocktail.edit', compact('cocktail'));
+        
+        $ingredients = Ingredient::all();
+
+        return view('Cocktail.edit', compact('cocktail','ingredients'));
     }
 
     /**
@@ -68,6 +79,13 @@ class CocktailController extends Controller
     {
         $data = $request->all();
         $cocktail->update($data);
+
+        if($request->has('ingredients')){
+            $cocktail->ingredients()->sync($request->ingredients);
+        }else{
+            $cocktail->ingredients()->detach();
+        }
+
 
         return redirect()->route('cocktails.index');
     }

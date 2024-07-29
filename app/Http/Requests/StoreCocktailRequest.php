@@ -23,7 +23,7 @@ class StoreCocktailRequest extends FormRequest
     {
         return [
             'nome' => ['required', 'max:50','unique:cocktails'],
-            'ingredienti' => ['required','max:100'],
+            
             'tasso_alcolico' => ['required'],
             'prezzo' => ['required'],
             'descrizione' => ['required','max:300'],

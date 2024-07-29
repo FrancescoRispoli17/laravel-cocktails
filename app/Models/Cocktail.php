@@ -9,4 +9,10 @@ class Cocktail extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    
+    public function ingredients(){
+        return $this->belongsToMany(Ingredient::class);
+    }
 }
+
