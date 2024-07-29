@@ -40,12 +40,12 @@ Cocktails
                     @foreach ($ingredients as $ingredient)
                     <div class="form-check form-check-inline">
                         @if ($errors->any()) {
-                        <input class="form-check-input" type="checkbox" id="tec-{{ $ingredient->id }}" value="{{ $ingredient->id }}" name="ingredients[]" {{ in_array($ingredient->id, old('ingredients', old('$cocktail->ingredients'))) ? 'checked' : ''}}>
-                        <label class="form-check-label" for="tec-{{ $ingredient->id }}">{{ $ingredient->name }}</label>
+                        <input class="form-check-input" type="checkbox" id="ingredient-{{ $ingredient->id }}" value="{{ $ingredient->id }}" name="ingredients[]" {{ in_array($ingredient->id, old('ingredients', old('$cocktail->ingredients'))) ? 'checked' : ''}}>
+                        <label class="form-check-label" for="ingredient-{{ $ingredient->id }}">{{ $ingredient->name }}</label>
                         }
                         @else
-                        <input class="form-check-input" type="checkbox" id="tec-{{ $ingredient->id }}" value="{{ $ingredient->id }}" name="ingredients[]" {{ $cocktail->ingredients->contains($ingredient) ? 'checked' : ''}}>
-                        <label class="form-check-label" for="tec-{{ $ingredient->id }}">{{ $ingredient->name }}</label>
+                        <input class="form-check-input" type="checkbox" id="ingredient-{{ $ingredient->id }}" value="{{ $ingredient->id }}" name="ingredients[]" {{ $cocktail->ingredients->contains($ingredient) ? 'checked' : ''}}>
+                        <label class="form-check-label" for="ingredient-{{ $ingredient->id }}">{{ $ingredient->name }}</label>
                         @endif
                     </div>
                     @endforeach

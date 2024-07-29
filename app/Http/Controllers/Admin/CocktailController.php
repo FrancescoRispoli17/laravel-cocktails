@@ -87,7 +87,7 @@ class CocktailController extends Controller
         }
 
 
-        return redirect()->route('cocktails.index');
+        return redirect()->route('cocktails.show', $cocktail);
     }
 
     /**
