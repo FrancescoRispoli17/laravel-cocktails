@@ -13,7 +13,8 @@ class IngredientController extends Controller
      */
     public function index()
     {
-        //
+        $ingredients = Ingredient::all();
+        return view('Ingredient.index', compact('ingredients'));
     }
 
     /**
@@ -21,7 +22,9 @@ class IngredientController extends Controller
      */
     public function create()
     {
-        //
+        
+
+        return view('Ingredient.create');
     }
 
     /**
@@ -29,7 +32,9 @@ class IngredientController extends Controller
      */
     public function store(StoreIngredientRequest $request)
     {
-        //
+        // $data = $request->validated();
+
+        // $ingredient = new Ingredient();
     }
 
     /**
@@ -61,6 +66,7 @@ class IngredientController extends Controller
      */
     public function destroy(Ingredient $ingredient)
     {
-        //
+        $ingredient->delete();
+        return redirect()->route('ingredients.index');
     }
 }
