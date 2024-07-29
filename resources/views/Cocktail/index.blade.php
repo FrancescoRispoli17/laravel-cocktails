@@ -27,8 +27,8 @@
                           <p class="card-text">€{{$cocktail->prezzo}}</p>
                           <a href="{{route('cocktails.show',$cocktail)}}" class="btn btn-info">Info</a>
                           <a href="{{route('cocktails.edit',$cocktail)}}" class="btn btn-primary">Modifica</a>
-                          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"> Cancella</button>
-                          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#{{$cocktail->id}}"> Cancella</button>
+                          <div class="modal fade" id="{{$cocktail->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                               <div class="modal-content">
                                 <div class="modal-header">
