@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\CocktailController;
 use App\Http\Controllers\Guest\PageController;
+use App\Http\Controllers\IngredientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class,'home']);
 Route::resource('cocktails', CocktailController::class);
+Route::resource('ingredients', IngredientController::class);
