@@ -6,7 +6,9 @@ use App\Models\Cocktail;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCocktailRequest;
 use App\Http\Requests\UpdateCocktailRequest;
+use App\Mail\NewCocktail;
 use App\Models\Ingredient;
+use Illuminate\Support\Facades\Mail;
 
 class CocktailController extends Controller
 {
@@ -47,6 +49,8 @@ class CocktailController extends Controller
         if ($request->has('ingredients')) {
             $cocktail->ingredients()->attach($request->ingredients);
         }
+
+        Mail::to('rispolifrancesco997@gmail.com')->send(new NewCocktail($cocktail));
         return redirect()->route('cocktails.index')->with('message', 'creazione avvenuta con successo');
     }
 

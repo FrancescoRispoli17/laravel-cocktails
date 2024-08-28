@@ -22,7 +22,6 @@
             <h3>Ingredienti:</h3>
             <h3>Tasso alcolemico: {{$cocktail->tasso_alcolico}}% </h3>
             </div>
-            <!-- <p>{{$cocktail->ingredienti}}</p> -->
              @foreach($cocktail->ingredients as $ingredient)
              <span class="mx-2 btn btn-primary">{{$ingredient->name}}</span>
              @endforeach
